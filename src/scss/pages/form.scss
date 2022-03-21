@@ -1,0 +1,26 @@
+.colback{
+  padding: 60px 0;
+
+  &__container{
+    background-color: #EAEFF3;
+    padding: 30px ;
+  }
+
+  &__form{
+    display: grid;
+    grid-gap: 30px;
+    margin-top: 35px;
+
+    @include mq('tablet-wide') {
+      grid-template-columns: 2fr 2fr 1fr;
+
+      p{
+        grid-column: span 2;
+
+        a{
+          color: $color_6;
+        }
+      }
+    }
+  }
+}

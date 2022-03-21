@@ -1,0 +1,111 @@
+//<Разметка текста>====================================================================================================
+.offer {
+  @include adaptiveValue(font-size, 48, 30);
+  color: $color_6;
+  font-weight: 700;
+  margin-bottom: rem(10);
+}
+
+.title{
+  @include adaptiveValue(font-size, 36, 30);
+  font-weight: 400;
+  margin-bottom: rem(10);
+}
+
+.h1,h1{
+
+}
+
+.h2,h2{
+  @include adaptiveValue(font-size, 22, 20);
+  color: $color_6;
+  font-weight: 800;
+  margin-bottom: rem(30);
+}
+
+.h3,h3{
+  @include adaptiveValue(font-size, 30, 24);
+  font-weight: 400;
+  margin-bottom: rem(10);
+}
+
+.h4,h4{
+
+}
+
+.h5,h5{
+
+}
+
+.h6,h6{
+
+}
+
+q{
+
+}
+
+//Стилизация кнопок
+
+.button-b{
+  background: $color_6;
+  color: $color_1;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  cursor: pointer;
+  transition: .5s;
+  font-size:rem(18);
+  font-weight: 700;
+  border-radius: 0;
+  border: 1px solid $color_6;
+  text-transform: uppercase;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: $color_7;
+      border: 1px solid $color_7;
+    }
+  }
+  &:focus{
+    background: darken($color_6, 5);
+  }
+}
+
+.button-w{
+  background: $color_1;
+  color: $color_6;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 66px;
+  cursor: pointer;
+  transition: .5s;
+  font-size:rem(12);
+  font-weight: 700;
+  border-radius: 0;
+  border: 1px solid $color_6;
+  text-transform: uppercase;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: $color_6;
+      color: $color_1;
+    }
+  }
+  &:focus{
+    background: darken($color_6, 5);
+  }
+
+}
+
+//Стилизация списков
+
+.input{
+  border: 1px solid #C4C4C4;
+  padding: rem(20);
+  @include adaptiveValue(font-size, 20,16);
+}

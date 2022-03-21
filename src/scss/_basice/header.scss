@@ -1,0 +1,43 @@
+.header {
+  @include adaptiveValue(padding-top, 20, 10);
+  @include adaptiveValue(padding-bottom, 20, 10);
+
+  &__container{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 20px;
+    @include mq('tablet') {
+      grid-template-columns: 1fr 500px;
+    }
+  }
+  .logo svg{
+    @include maq('tablet') {
+      width: 120px;
+    }
+  }
+  &__body{
+    flex: 0 0 auto;
+    display: flex;
+    gap: rem(30);
+    align-items: center;
+    @include maq('tablet') {
+      gap: rem(10);
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .select_city{
+        margin-left: auto;
+    }
+    .header__link{
+      flex: 0 0 auto;
+      transition: .5s;
+      @include adaptiveValue(font-size, 24, 16);
+
+      &:hover{
+        color: $color_6;
+      }
+    }
+  }
+}

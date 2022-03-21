@@ -1,0 +1,37 @@
+.footer{
+  color: $color_1;
+  background-color: $color_7;
+  padding: rem(30) 0;
+ @include adaptiveValue(font-size, 18, 16);
+
+  &__container{
+    display: grid;
+    grid-gap: rem(20);
+    @include mq('tablet') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  &__column{
+    display: grid;
+    grid-gap: rem(10);
+    align-content: flex-start;
+    @include maq('tablet') {
+      text-align: center;
+    }
+    @include mq('tablet') {
+      &:nth-child(2) {
+        text-align: center;
+      }
+      &:nth-child(3) {
+        text-align: right;
+      }
+    }
+  }
+  &__soc{
+    display: flex;
+    gap: 10px;
+    @include maq('tablet') {
+      margin: auto;
+    }
+  }
+}

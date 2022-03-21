@@ -1,0 +1,39 @@
+.first{
+  padding: 60px 0;
+
+  &__container{
+    display: grid;
+    grid-gap: rem(30);
+    @include mq('tablet-wide') {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &__content{
+    p{
+      margin-bottom: 30px;
+      @include adaptiveValue(font-size, 22, 16);
+    }
+
+  }
+  &__form{
+    display: grid;
+    grid-gap: 30px;
+  }
+
+  &__bot{
+
+    p{
+      @include adaptiveValue(font-size, 18, 16);
+      margin-bottom: 10px;
+
+      a{
+        color: $color_6;
+      }
+    }
+  }
+  &__img{
+    img {
+      max-width: 100%;
+    }
+  }
+}

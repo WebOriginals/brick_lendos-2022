@@ -1,0 +1,230 @@
+//Подключение шрифта
+@mixin font($font_name, $file_name, $weight, $style) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+//Адаптивное свойство
+@mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
+	// Брейк-поинты в EM
+	$widthFromMedia: em($widthFrom);
+	$widthToMedia: em($widthTo);
+	// Ночальное и конечное значение в REM
+	$minSizeValue: rem($minSize);
+	$startSizeValue: rem($startSize);
+	// Пересчитываем переменные относительно
+	// размера шрифта по умолчанию
+	$minWidth: math.div($minWidth, 16);
+	$maxWidth: math.div($maxWidth, 16);
+	$containerWidth: math.div($containerWidth, 16);
+	$addSize: math.div($startSize - $minSize, 16);
+	$widthTo: math.div($widthTo, 16);
+	$widthFrom: math.div($widthFrom, 16);
+	// Если указано ограничение у контейнера,
+	// либо указана стартовая или конечная ширина
+	// включаем режим работы в промежутке ширин
+	@if ($maxWidthContainer > 0 or $widthFrom != $containerWidth or $widthTo != $minWidth) and $widthFrom > $widthTo {
+		// Если стартовая ширина равна ширине контейнера + отступы,
+		// или указана настройка "keepSize" ставим значение
+		// по умолчанию равное стартовому размеру
+		@if $widthFrom == $containerWidth or $keepSize == 1 or $keepSize == 2 {
+			@media (min-width: $widthFromMedia) {
+				#{$property}: $startSizeValue;
+			}
+		}
+		// Адаптируем размер в промежутке между указанными ширинами вьюпорта
+		@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+			#{$property}: calc(#{$minSizeValue} + #{$addSize} * (((100vw - #{$widthTo + rem})) / ((#{$widthFrom - $widthTo}))));
+		}
+		// Если конечная ширина равна минимальной ширине
+		// или указана настройка "keepSize" ставим значение
+		// по умолчанию равное конечному размеру
+		@if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+			@media (max-width: $widthToMedia) {
+				#{$property}: $minSizeValue;
+			}
+		}
+	} @else {
+		// Режим работы по всей ширине вьюпорта
+		#{$property}: calc(#{$minSizeValue} + #{$addSize} * (((100vw - #{$widthTo + rem})) / ((#{$maxWidth - $widthTo}))));
+	}
+}
+
+//Percent
+@function percent($px, $from) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+
+//REM
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+
+//EM
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// Grids
+@mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
+	display: grid;
+	gap: $gap;
+	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+}
+
+//Медиа запрос
+$breakpoints: (
+				"phone":        320px,
+				"phone-midle":  370px,
+				"phone-wide":   480px,
+				"phablet":      560px,
+				"tablet-small": 640px,
+				"tablet":       768px,
+				"tablet-990":   990px,
+				"tablet-wide":  1024px,
+				"desktop":      1200px,
+				"desktop1350":  1350px,
+				"desktop-wide": 1440px,
+				"2K":           1800px,
+				"2.5K":         2500px,
+				"3K":           3000px
+);
+@mixin mq($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+@mixin maq($width, $type: max) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+//пример
+//.site-header { @include mq('tablet-wide') {padding-top: 4rem;font-size: 2.4rem;} }
+
+// Счетчик для списка
+%listCounter {
+	list-style-type: none;
+	counter-reset: item;
+	li {
+		position: relative;
+		&:before {
+			counter-increment: item;
+			content: counter(item);
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
+// Адаптивное видео
+%responsiveVideo {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+// Видео в качестве фона
+%videoBackground {
+	video,
+	iframe,
+	object,
+	embed {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		transform: translateX(-50%) translateY(-50%);
+		background-size: cover;
+	}
+}
+
+// Серый фильтр
+%grayfilter {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	@media (any-hover: hover) {
+		&:hover {
+			filter: grayscale(0);
+		}
+	}
+}
+
+// Отменить выделение
+%noselect {
+	user-select: none;
+}
+
+// Зеркальное отображение
+%mirror {
+	transform: scale(-1, 1);
+}
+
+// Плавный скролл
+%smoothscroll {
+	-webkit-overflow-scrolling: touch;
+}
+
+// Скрыть скролл
+%hidescroll {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+// Стили для отзывчивых картинок (IBG)
+// Сниппет (HTML): ibg (div c картинкой и классами)
+// Сниппет (HTML): ibga (a c картинкой и классами)
+[class*="-ibg"] {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+[class*="-ibg_contain"] {
+	img {
+		object-fit: contain;
+	}
+}

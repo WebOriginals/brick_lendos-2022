@@ -1,0 +1,174 @@
+style(type="text/css").
+    h1{
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 35px;
+    }
+    .body_simplebar .simplebar-content{
+        display: flex;
+        gap: 30px;
+    }
+    img{
+        max-width: 100%;
+    }
+
+// Tabs
+h1 Tabs
+.tabs(data-tabs="992" data-tabs-animate)
+    .tabs__navigation(data-tabs-titles)
+        button(data-tabs-title='1').tabs__title._tab-active  title 1
+        button(data-tabs-title='2').tabs__title  title 2
+        button(data-tabs-title='3').tabs__title  title 3
+        button(data-tabs-title='4').tabs__title  title 4
+    .tabs__content(data-tabs-body)
+        .main-tab__body(data-tabs-item="1") 11111111Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dignissimos doloremque est eveniet ipsam minima modi quam. Accusamus aliquid cumque exercitationem facilis iusto neque numquam quas quos sit ullam.
+        .main-tab__body(data-tabs-item="2") 22222222Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dignissimos doloremque est eveniet ipsam minima modi quam. Accusamus aliquid cumque exercitationem facilis iusto neque numquam quas quos sit ullam.
+        .main-tab__body(data-tabs-item="3") 33333333Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dignissimos doloremque est eveniet ipsam minima modi quam. Accusamus aliquid cumque exercitationem facilis iusto neque numquam quas quos sit ullam.
+        .main-tab__body(data-tabs-item="4") 444444444Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aut dignissimos doloremque est eveniet ipsam minima modi quam. Accusamus aliquid cumque exercitationem facilis iusto neque numquam quas quos sit ullam.
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+// Spollers
+h1 Spollers
+.spollers(data-spollers data-one-spoller)
+    .spollers__title(data-spoller) spoller 1
+    .spollers__body spoller 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi culpa deserunt ducimus eligendi exercitationem laboriosam magni modi molestias, nesciunt nisi omnis, perspiciatis quidem recusandae repudiandae sed sit, tempora voluptatem.
+
+    .spollers__title(data-spoller) spoller 2
+    .spollers__body spoller 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam commodi culpa deserunt ducimus eligendi exercitationem laboriosam magni modi molestias, nesciunt nisi omnis, perspiciatis quidem recusandae repudiandae sed sit, tempora voluptatem.
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+//showmore
+h1 showmore
+.showmore(data-showmore='size')
+    ul(data-showmore-content='15')
+        li список 1
+        li список 2
+        li список 3
+        li список 4
+    .showmore__btn(data-showmore-button) свернуть
+br
+br
+.showmore(data-showmore='items')
+    ul(data-showmore-content="2")
+        li список 1
+        li список 2
+        li список 3
+        li список 4
+        li список 5
+        li список 6
+    .showmore__btn(data-showmore-button) свернуть
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//da
+h1 da
+.body_1(style="background-color: red; padding: 30px")
+    ol(data-da=".body_2,992,2")
+        li список 1
+        li список 2
+        li список 3
+        li список 4
+        li список 5
+        li список 6
+
+.body_2(style="background-color: blue;padding: 30px")
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//range
+h1 range
+.rating
+    .rating__inputs
+        .slot
+            input#price-start( type="number" value='')
+            label(for="price-start") от
+        .slot
+            input#price-end( type="number" value='')
+            label(for="price-end") до
+    .rating__slider#range
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//simplebar
+h1 simplebar
+
+
+.body(data-simplebar style='max-height: 200px')
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias amet aperiam, at culpa dolor eum hic illum laboriosam laudantium magni molestias nemo, nesciunt nulla odio perspiciatis qui quod repudiandae velit veniam. Ad adipisci atque consectetur cumque dolorem earum eos et harum id inventore iste labore laudantium magni molestias nam necessitatibus, nihil odio placeat praesentium ratione reiciendis rem repellendus saepe sapiente sunt veritatis voluptate. Accusantium cupiditate dignissimos explicabo facilis libero omnis reiciendis? Aperiam aspernatur dolorum et excepturi expedita fugiat hic impedit incidunt ipsam, iste magni, nesciunt nisi, nulla quas repellendus rerum veritatis voluptatem voluptatum. Ab animi consectetur consequuntur deleniti ducimus eaque error facere laboriosam laudantium minima modi neque, officia quas, quo ratione sapiente totam voluptatibus? Accusamus commodi consectetur cumque dolorem ea, eligendi esse explicabo, facere fugiat fugit minus molestias nisi quae quidem ratione sed voluptate. Blanditiis consectetur doloribus, ducimus ea eveniet incidunt, odio officia perspiciatis quidem, rem soluta ut voluptas voluptatem. Culpa delectus dicta nam quia quisquam reiciendis repellendus sed soluta ullam? Asperiores aut, debitis deleniti dicta doloribus eaque earum facere facilis illo ipsa itaque magnam maiores minima nemo odio pariatur quidem quis quo repellat sapiente tenetur velit vitae, voluptates. Aliquid aperiam blanditiis deleniti deserunt doloribus earum et eveniet maiores minima, natus numquam praesentium quaerat quas quasi qui quis repellendus saepe sint, soluta tempora. Accusamus amet dolor excepturi, quam suscipit voluptatibus? Accusamus animi dolores labore quia quod. Blanditiis ducimus eaque ex explicabo inventore laborum mollitia odio quam quas tenetur. Cumque cupiditate enim, et ex laboriosam quam reiciendis sit temporibus? Id minus optio perspiciatis provident quaerat quam, quasi quibusdam reiciendis tempora temporibus, ullam voluptatem? Ad animi, assumenda beatae cumque doloremque eaque eligendi enim expedita hic illum labore magnam molestias nostrum quae, repellat sint soluta veniam voluptatum. A amet, aspernatur dolore esse nostrum officiis pariatur quibusdam quis repellendus voluptatibus. Accusantium amet earum et necessitatibus nisi pariatur perferendis quibusdam ratione repellendus! A consequatur debitis magnam sed! A aut consequuntur dolore dolorem doloribus eveniet explicabo facere harum in ipsum iste maxime minima modi nam nisi odit officia omnis, pariatur provident qui quis quo reiciendis repellendus sint vitae! Accusantium asperiores at cupiditate doloribus ducimus enim est exercitationem explicabo hic illo magnam minus molestiae mollitia nihil numquam officiis omnis quas quasi quia quibusdam quidem quo repellat rerum sapiente suscipit totam voluptas, voluptates. Accusamus accusantium blanditiis, consequuntur culpa delectus deserunt dicta dolores doloribus eius enim eum facere facilis illum ipsam iusto nihil officiis perferendis rem sapiente sint sit tempora vel, voluptatem? Ab atque cumque cupiditate dicta, eligendi explicabo fugit illum inventore libero natus nisi nobis numquam quae quaerat quasi, quisquam, repellat sed tempora unde voluptatem. Atque doloribus error eum facilis id perferendis sint. Ad consequuntur et explicabo facilis fuga harum laborum minus saepe tempora veniam! Adipisci alias amet atque cumque dolorum eos est facere ipsam laudantium magnam nam nemo nobis non perspiciatis quos reiciendis, repellendus repudiandae sequi soluta tempora veniam voluptate voluptatem voluptates. A accusamus aliquam architecto at beatae cum dignissimos dolorem eum explicabo, facere in incidunt inventore iste iure iusto libero minus neque nobis officiis optio provident quasi quia quisquam reiciendis, repellendus rerum saepe sapiente sint sunt tempore ullam veniam vero voluptates? A, accusantium aliquam beatae blanditiis consequuntur corporis cupiditate dignissimos dolor dolores ducimus eius eveniet excepturi facere facilis hic id impedit iste molestiae mollitia nam neque officia pariatur perspiciatis quae quas quidem reiciendis sapiente sequi tempora ut vel velit voluptas voluptate. At dicta fuga fugiat, iste laborum maiores obcaecati provident ratione reiciendis repudiandae. Beatae culpa debitis est laborum laudantium non nostrum rerum suscipit. Aliquam animi culpa deleniti esse neque nobis optio, qui? Ab at autem consequuntur dicta dignissimos distinctio dolore molestiae, natus odio officiis omnis quia quo recusandae repudiandae sapiente sequi, tenetur voluptatum. Ab amet aperiam architecto aut delectus distinctio doloremque doloribus, enim est eum fugiat itaque labore minus molestias nam nemo nesciunt nihil nulla odio quae quas reiciendis rem reprehenderit repudiandae sequi similique sint unde ut vitae voluptatem? Ad adipisci eum illum impedit natus, nobis odio perferendis quaerat sit soluta. Aspernatur, id, velit? A accusamus ad, aliquid at aut debitis dignissimos dolor ducimus earum eius et facere illo iure labore libero magni maxime minima neque nesciunt nisi nobis numquam odio officia pariatur perferendis placeat possimus quasi quis ratione recusandae sint soluta totam unde velit veniam vitae voluptate. Ab aliquam at earum esse eum facere ipsam itaque, maxime nam nesciunt non officia optio reprehenderit tempora voluptate? Adipisci, aliquam assumenda culpa delectus, id, inventore ipsum iusto laboriosam minima nobis perferendis quibusdam quis quo veniam vero! Accusantium aperiam, dignissimos dolor eius illum ipsum molestiae, nisi obcaecati optio perspiciatis quaerat, quibusdam sequi tenetur? Animi aperiam est ex fuga odio, optio pariatur porro quisquam sapiente similique. Adipisci at eligendi error harum illum inventore, iste iusto laboriosam laborum maiores nemo qui repellat sunt! At consequuntur corporis deserunt magni sint temporibus vel vero? At, beatae consectetur culpa dignissimos dolorum expedita ipsam laboriosam, modi, nihil non odio omnis perspiciatis placeat quia quisquam repellat repellendus tempora ullam veniam voluptatum? Et fugit magni nobis odio vero! A ab architecto assumenda aut, debitis delectus fuga id maxime nobis numquam, quam recusandae, saepe. Accusamus commodi doloribus dolorum excepturi expedita non quas tempora ut velit. Alias, architecto aspernatur aut consequatur culpa dignissimos dolore ea earum eos, excepturi id incidunt ipsa minus natus, praesentium quibusdam quis quos sed veritatis vero? Assumenda at atque dolor dolorum ducimus eum, impedit iste minima nemo nobis provident quis repellat reprehenderit sunt tempore velit voluptatibus! Accusamus alias asperiores dignissimos dolores ea laborum minima nobis quaerat, reprehenderit sequi temporibus veniam. Consequatur consequuntur cum dicta ea error facilis, harum id inventore iure magnam mollitia nulla officiis optio quae quasi reiciendis repudiandae rerum, saepe voluptatibus voluptatum? Autem consequatur corporis, dicta doloribus ea maiores molestias, neque quaerat quod ratione repellendus totam ullam, vel. Alias esse et fugit hic iure magnam pariatur quae quam ratione sapiente! Atque cupiditate doloremque, eius fugiat itaque libero mollitia nostrum odit quis recusandae reiciendis ullam vel voluptatem. Est, fugit labore! Aperiam dolor ea eum exercitationem fugiat ipsam itaque libero molestiae molestias mollitia necessitatibus perspiciatis quaerat quia, rem sunt voluptate voluptatum. Impedit, nam, quos?
+
+.body_simplebar(data-simplebar  style='max-height: 100px;max-width: 200px;')
+    .item(style='display: flex; flex: 0 0 80px;height: 80px;justify-items: center;align-items: center;') Lorem ipsum dolor sit amet.
+    .item(style='display: flex; flex: 0 0 80px;height: 80px;justify-items: center;align-items: center;') Lorem ipsum dolor sit amet.
+    .item(style='display: flex; flex: 0 0 80px;height: 80px;justify-items: center;align-items: center;') Lorem ipsum dolor sit amet.
+    .item(style='display: flex; flex: 0 0 80px;height: 80px;justify-items: center;align-items: center;') Lorem ipsum dolor sit amet.
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//slider
+h1 slider
+.slider__swiper
+    .item Lorem ipsum dolor sit amet.
+    .item Lorem ipsum dolor sit amet.
+    .item Lorem ipsum dolor sit amet.
+    .item Lorem ipsum dolor sit amet.
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//_lazy
+h1 lazy
+img(alt="A lazy image" class="_lazy" data-src="img/cover.jpg")
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+
+//quantity
+h1 quantity
+.quantity
+    .quantity__button.quantity__button_minus
+    .quantity__input
+        input(value='1' data-max='15')
+    .quantity__button.quantity__button_plus
+.quantity
+    .quantity__button.quantity__button_minus
+    .quantity__input
+        input(value='1' data-max='55')
+    .quantity__button.quantity__button_plus
+
+br
+br
+hr(style='border-bottom: 1px solid #000;')
+br
+br
+//soc
+h1 soc
+a(href="#").soc
+    svg(width='24', height='24', viewbox='0 0 24 24', fill='none', xmlns='http://www.w3.org/2000/svg')
+        path(d='M6.96 0H17.04C20.88 0 24 3.12 24 6.96V17.04C24 18.8859 23.2667 20.6562 21.9615 21.9615C20.6562 23.2667 18.8859 24 17.04 24H6.96C3.12 24 0 20.88 0 17.04V6.96C0 5.11409 0.733284 3.34379 2.03854 2.03854C3.34379 0.733284 5.11409 0 6.96 0ZM6.72 2.4C5.57427 2.4 4.47546 2.85514 3.6653 3.6653C2.85514 4.47546 2.4 5.57427 2.4 6.72V17.28C2.4 19.668 4.332 21.6 6.72 21.6H17.28C18.4257 21.6 19.5245 21.1449 20.3347 20.3347C21.1449 19.5245 21.6 18.4257 21.6 17.28V6.72C21.6 4.332 19.668 2.4 17.28 2.4H6.72ZM18.3 4.2C18.6978 4.2 19.0794 4.35804 19.3607 4.63934C19.642 4.92064 19.8 5.30218 19.8 5.7C19.8 6.09783 19.642 6.47936 19.3607 6.76066C19.0794 7.04197 18.6978 7.2 18.3 7.2C17.9022 7.2 17.5206 7.04197 17.2393 6.76066C16.958 6.47936 16.8 6.09783 16.8 5.7C16.8 5.30218 16.958 4.92064 17.2393 4.63934C17.5206 4.35804 17.9022 4.2 18.3 4.2ZM12 6C13.5913 6 15.1174 6.63214 16.2426 7.75736C17.3679 8.88258 18 10.4087 18 12C18 13.5913 17.3679 15.1174 16.2426 16.2426C15.1174 17.3679 13.5913 18 12 18C10.4087 18 8.88258 17.3679 7.75736 16.2426C6.63214 15.1174 6 13.5913 6 12C6 10.4087 6.63214 8.88258 7.75736 7.75736C8.88258 6.63214 10.4087 6 12 6ZM12 8.4C11.0452 8.4 10.1295 8.77928 9.45442 9.45442C8.77928 10.1295 8.4 11.0452 8.4 12C8.4 12.9548 8.77928 13.8705 9.45442 14.5456C10.1295 15.2207 11.0452 15.6 12 15.6C12.9548 15.6 13.8705 15.2207 14.5456 14.5456C15.2207 13.8705 15.6 12.9548 15.6 12C15.6 11.0452 15.2207 10.1295 14.5456 9.45442C13.8705 8.77928 12.9548 8.4 12 8.4Z', fill='white')

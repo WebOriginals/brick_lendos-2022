@@ -1,0 +1,112 @@
+.project{
+  padding: 60px 0;
+
+  p{
+    margin-bottom: 30px;
+  }
+
+  &__column{
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    @include mq('tablet-wide') {
+      flex-direction: row;
+      gap: 100px;
+      &:nth-child(even){
+        grid-template-columns: 2fr 1fr;
+        .project__swipe{
+          flex: 1 1 70%;
+        }
+        .project__content{
+          flex: 1 1 30%;
+          align-items: center;
+          display: grid;
+          align-content: center;
+        }
+      }
+      &:nth-child(odd){
+
+        .project__swipe{
+          order: 2;
+          flex: 1 1 70%;
+        }
+        .project__content{
+          order: 1;
+          flex: 1 1 30%;
+          align-items: center;
+          display: grid;
+          align-content: center;
+        }
+      }
+    }
+
+    &:not(:last-child){
+      margin-bottom: 60px;
+    }
+    &:hover{
+      button{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__swipe{
+    min-width: 0;
+    .swiper{
+      position: relative;
+    }
+
+    .swiper-slide{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+  &-nav{
+    z-index: 5;
+    position: absolute;
+    right: 15px;
+    bottom: 30px;
+    display: flex;
+    gap: 30px;
+
+    &-prev, &-next{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: $color_1;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+
+      &:hover{
+        path{
+          fill: $color_6;
+        }
+      }
+    }
+  }
+
+  &__body{
+
+  }
+  &__content{
+
+    .wr{
+      display: flex;
+      gap: 30px;
+      margin-bottom: 30px;
+      span{
+        font-weight: 300;
+        @include adaptiveValue(font-size, 30, 24);
+      }
+    }
+    button{
+      @include mq('tablet-wide') {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
