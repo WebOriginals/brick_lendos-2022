@@ -1,0 +1,239 @@
+.sec-video{
+  padding: 60px 0;
+}
+.video-title{
+  @include adaptiv-margin-bottom(65, 53);
+  width: 100%;
+
+}
+.content-left{
+  width: 100%;
+  @include mq('tablet') {
+    width: 50%;
+    padding-right: 30px;
+  }
+}
+.box-indicators{
+  display: grid;
+  grid-gap:30px 10px;
+  @include adaptiv-margin-bottom(80, 30);
+  justify-content: space-between;
+  grid-template-columns: 1fr 1.2fr;
+
+}
+.item-number{
+  @extend %flex;
+  width: fit-content;
+
+  //&:nth-child(1),
+  //&:nth-child(2){
+  //  @include adaptiv-margin-bottom(75, 15);
+  //}
+
+}
+
+
+.count{
+  @include adaptiv-font(96, 54);
+  color: $color_6;
+  line-height: .8;
+  font-weight: 400;
+  margin: 0 5px 0 0;
+  @include mq('2K') {
+    font-size: 80px;
+  }
+
+
+}
+
+.text-dec{
+  @include adaptiv-font(24, 14);
+  font-weight: 400;
+  align-self: flex-end;
+  line-height: 1.2;
+  @include mq('3K') {
+    font-size: 24px;
+  }
+}
+.text-vertical{
+  margin-bottom: 8px;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  height: 14px;
+  align-self: flex-end;
+  color: $color_6;
+  @include adaptiv-font(24, 14);
+  font-weight: 400;
+  @include mq('tablet') {
+    margin-bottom: 13px;
+  }
+  @include mq('2K') {
+    font-size: 24px;
+    margin-bottom: 19px;
+  }
+}
+
+.box-text{
+
+  p{
+    @include adaptiv-font(18, 16);
+    margin-bottom: 0;
+    line-height: 1.55;
+    &:not(:last-child){
+      margin-bottom: 20px;
+    }
+  }
+}
+.media-right{
+  width: 100%;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  display: block;
+  a{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  @include mq('tablet') {
+    width: 50%;
+  }
+  @include mq('desktop') {
+    height: 460px;
+  }
+  @include mq('desktop-wide') {
+    height: auto;
+  }
+}
+.media-right__bg{
+  height: 100%;
+  position: absolute;
+  top: calc(50% - 56px);
+  left: calc(50% - 56px);
+
+  @media only screen and (min-width:1280px) and (max-width: 1366px) {
+    top: calc(50% - 88px);
+    left: calc(50% - 88px);
+  }
+
+  @include mq('desktop-wide') {
+    top: calc(50% - 87px);
+    left: calc(50% - 87px);
+  }
+}
+.media-right__play{
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  @include mq('desktop-wide') {
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+  }
+}
+
+@include maq('tablet') {
+  .media-right{
+    order: 1;
+    margin-bottom: 30px;
+  }
+  .content-left{
+    order: 2;
+  }
+}
+.body-video{
+  @extend %flex;
+}
+
+
+@include mq('desktop') {
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    50%, 75% {
+      transform: scale(1.5);
+    }
+    78%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle:before {
+    content: "";
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  }
+
+  .circle-1 {
+    background-color: #0EBAB9;
+  }
+
+  .circle-1:before {
+    background-color: #0EBAB9;
+    animation-delay: 200ms;
+  }
+}
+@include maq('desktop') {
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    50%, 75% {
+      transform: scale(1.5);
+    }
+    78%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .circle:before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+  }
+
+  .circle-1 {
+    background-color: #0EBAB9;
+  }
+
+  .circle-1:before {
+    background-color: #0EBAB9;
+    animation-delay: 200ms;
+  }
+  .about_us__ic svg {
+    width: 83px;
+  }
+
+}

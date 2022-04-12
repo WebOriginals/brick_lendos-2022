@@ -65,11 +65,7 @@ body {
   }
 
   @include adaptiveValue(font-size,20,16);
-  @include mq('tablet-wide') {
-    background-image: url("./../img/svg/b.svg");
-    background-repeat: no-repeat;
-    background-position: left top 150px;
-  }
+
 }
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
@@ -145,7 +141,7 @@ body {
 //библтотеки
 @import "libs/swiper";
 //@import "libs/nouislider";
-//@import "libs/simplebar";
+@import "libs/simplebar";
 
 // Подключение базовых стилей из _basice
 @import "_basice/header";
@@ -154,7 +150,7 @@ body {
 //@import "_basice/crumbs";
 //@import "_basice/title";
 //@import "_basice/pagging";
-//@import "_basice/popup";
+@import "_basice/popup";
 
 
 
@@ -164,7 +160,7 @@ body {
 //галерея
 //@import "_ui/lightgallery";
 //селект
-@import "_ui/select";
+//@import "_ui/select";
 //@import "_ui/selectMultiple";
 //сщетчик у товара
 //@import "_ui/quantity";
@@ -190,3 +186,4 @@ body {
 @import "pages/mar";
 @import "pages/project";
 @import "pages/form";
+@import "pages/achievements";

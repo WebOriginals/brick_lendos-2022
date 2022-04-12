@@ -1,9 +1,12 @@
 //<Разметка текста>====================================================================================================
 .offer {
-  @include adaptiveValue(font-size, 48, 30);
+  @include adaptiveValue(font-size, 80, 30);
   color: $color_6;
   font-weight: 700;
   margin-bottom: rem(10);
+  @include mq('tablet-wide') {
+    width: 112%;
+  }
 }
 
 .title{

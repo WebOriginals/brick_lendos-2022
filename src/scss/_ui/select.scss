@@ -130,18 +130,24 @@
 	.select__title{
 		border: none;
 		border-radius: 0;
-		border-bottom: 1px solid $color_6;
 		@include adaptiveValue(font-size, 24, 16);
+		background-color: transparent;
+		//@include mq('tablet-wide') {
+		//	width: 180px;
+		//}
 	}
 	.select__value {
 		padding: 0;
+		border-bottom: 1px solid $color_1;
+		//width: fit-content;
+		//margin-left: auto;
 
 		&:before {
 			display: none;
 		}
 	}
 	.select__content{
-		color: $color_6;
+		color: $color_1;
 	}
 	.select__options{
 		border-radius: 0;

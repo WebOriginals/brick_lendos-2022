@@ -3,15 +3,21 @@ doctype html
 html(lang="ru")
 	+head('Главная')
 	body
+
 		.wrapper
+
 			include pug/_basic/_header
+
 			.page.main
 				include pug/first
-				include pug/mar
+				//include pug/mar
 				include pug/project
+				include pug/form-bg
+				include pug/achievements
 				include pug/form
 
 			include pug/_basic/_footer
+			include pug/_basic/_popup
 
 
 		include pug/_basic/_js
